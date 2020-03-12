@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-
+/**
+ * 
+ * This class isn't working yet :(
+ *
+ */
 public class DuplicateChecker {
 
 	int[] array;
@@ -8,28 +12,37 @@ public class DuplicateChecker {
 	
 	public DuplicateChecker(int[] array1) {
 		array = array1;
-		duplicateCount = 0;
 		duplicates = new ArrayList<Integer>();
 		
 		for (int i = 0; i < array.length-1; i++) {
 			for (int u = i+1; u < array.length; u++) {
 				if (array[i] == array[u]) {
 					duplicates.add(array[i]);
-					duplicateCount++;
 				}	
 			}
 		}	
 	}
 	
+	
 	public int getDuplicateCount() {
-		return duplicateCount;
+		return duplicates.size();
 	}
 	
-	public String getDuplicates() {
-		String result = "";
+	
+	public ArrayList<Integer> getDuplicates() {
+		return duplicates;
+	}
+	
+	
+	public String toString() {
+		String result = "[";
 		for (int i = 0; i < duplicates.size(); i++) {
-			result += duplicates.get(i) + "\n";
+			if (i + 1 == duplicates.size())
+				result += duplicates.get(i);
+			else
+				result += duplicates.get(i) + ", ";
 		}
+		result += "]";
 		return result;
 	}	
 }

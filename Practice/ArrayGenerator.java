@@ -8,7 +8,7 @@ public class ArrayGenerator {
 	public ArrayGenerator(int arraySize) {
 		array = new int[arraySize];
 		Random rand = new Random();
-		
+	
 		for (int i = 0; i < arraySize; i++) {
 			array[i] = rand.nextInt(10);
 		}
@@ -32,13 +32,14 @@ public class ArrayGenerator {
 	
 	
 	public String toString() {
-		String result = "";
-		
+		String result = "[";
 		for (int i = 0; i < array.length; i++) {
-			result += array[i] + "\n";
+			if (i + 1 == array.length)
+				result += array[i];
+			else
+				result += array[i] + ", ";
 		}
-		
-		
+		result += "]";
 		return result;
 	}
 }		
