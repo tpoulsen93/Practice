@@ -4,11 +4,11 @@ public class DuplicateChecker {
 
 	int[] array;
 	ArrayList<Integer> duplicates;
-	int duplicateCount, duplicateIndex;
+	int duplicateCount;
 	
 	public DuplicateChecker(int[] array1) {
 		array = array1;
-		duplicateCount = duplicateIndex = 0;
+		duplicateCount = 0;
 		duplicates = new ArrayList<Integer>();
 		
 		for (int i = 0; i < array.length-1; i++) {
